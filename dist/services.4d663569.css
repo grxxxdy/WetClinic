@@ -1,0 +1,159 @@
+﻿.header {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+.footer {
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+.footer-info {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+.footer-nav {
+  flex-direction: column;
+  margin-right: 100px;
+  display: flex;
+}
+
+.box {
+  border: 1px solid #000;
+}
+
+.horizontal {
+  justify-content: space-around;
+  align-items: stretch;
+  display: flex;
+}
+
+.menu {
+  display: flex;
+}
+
+.menu ul {
+  flex-direction: row;
+  list-style: none;
+  display: flex;
+}
+
+.menu ul li {
+  margin-right: 20px;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.feature {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+.hero-buttons {
+  flex-direction: column;
+  display: flex;
+}
+
+.services-grid {
+  grid-template-columns: repeat(3, 1fr);
+  display: grid;
+}
+
+.service-card {
+  border: 1px solid #000;
+  margin: 20px;
+}
+
+.achievements-grid {
+  grid-template-columns: repeat(2, 1fr);
+  display: grid;
+}
+
+.achievement-box {
+  border: 1px solid #000;
+  margin: 20px;
+}
+
+.about-image {
+  max-width: 20%;
+  height: auto;
+}
+
+.delimiter {
+  border: 1px solid #000;
+  height: 120px;
+  display: block;
+}
+
+.contact-card {
+  border: 1px solid #000;
+  flex: 1;
+}
+
+.map {
+  border: 1px solid #000;
+  flex: 1;
+  display: block;
+}
+
+@media (width <= 768px) {
+  .menu {
+    display: none;
+  }
+
+  .menu-active .menu, .menu-toggle {
+    display: block;
+  }
+
+  .header-logo {
+    order: 2;
+  }
+
+  .header-nav {
+    order: 3;
+  }
+
+  .header-contacts {
+    order: 1;
+  }
+
+  .feature {
+    flex-direction: column;
+  }
+
+  .footer-info {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+  }
+
+  .footer-nav {
+    display: none;
+  }
+
+  .services-grid, .achievements-grid {
+    grid-template-columns: 1fr;
+    display: grid;
+  }
+
+  .about-image {
+    display: none;
+  }
+
+  .delimiter {
+    border: 1px solid #000;
+    height: 65px;
+    display: block;
+  }
+}
+/*# sourceMappingURL=services.4d663569.css.map */
