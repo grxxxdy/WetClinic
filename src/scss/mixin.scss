@@ -1,0 +1,71 @@
+@use "sass:math";
+@use 'vars' as *;
+
+@function getVw($widthPx, $base-width: $desktop-width){
+  @return #{$widthPx / $base-width * 100}vw;
+}
+
+@mixin popup-button($font-size, $base-width: 1440) {
+  background-color: $dark-blue;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 36px;
+  padding: getVw($font-size / 2.1333, $base-width) getVw($font-size / 1.0667, $base-width);
+  cursor: pointer;
+  width: fit-content;
+
+  p{
+    color: white;
+    margin-right: getVw(5, $base-width);
+    font-size: getVw($font-size, $base-width);
+  }
+
+  svg{
+    width: calc(0.4 * getVw($font-size, $base-width));
+    position: relative;
+    top: getVw($font-size / 10.6667, $base-width);
+    margin-left: getVw($font-size / 8, $base-width);
+  }
+
+  @include dark-blue-button-anim();
+}
+
+@mixin dark-blue-button-anim{
+  transition: background-color 0.3s ease, transform 0.2s ease;
+
+  &:hover{
+    background-color: $dark-blue-hovered;
+    transform: scale(1.05);
+  }
+
+  &:active{
+    background-color: $dark-blue-pressed;
+    transform: scale(0.98);
+  }
+}
+
+@mixin svg-buttons-anim{
+  transition: transform 0.2s ease;
+
+  path{
+    transition: fill 0.3s ease;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+
+    path {
+      fill: $dark-blue-hovered;
+    }
+  }
+
+  &:active {
+    transform: scale(0.98);
+
+    path {
+      fill: $dark-blue-pressed;
+    }
+  }
+}
